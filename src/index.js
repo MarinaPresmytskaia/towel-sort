@@ -7,8 +7,7 @@ module.exports = function towelSort (matrix) {
     return [];
   }
   return matrix.reduce((acc, curr, i) => {
-    i % 2 === 0 
-    ? matrix[curr]
-    : curr.sort((a,b) => b - a);
-    return acc.concat(curr)}, []);  
+    if(i % 2 !== 0) {
+      curr.sort((a,b) => b - a); 
+    } return acc.concat(curr)}, []);  
 }
